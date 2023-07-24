@@ -55,4 +55,3 @@ bool cpfVerif(std::string cpf)
 	}
 	return true;
 }
-int main()

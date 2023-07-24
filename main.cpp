@@ -15,5 +15,5 @@ int main()
 	{
 		std::cout << "Cpf Inválido";
 	}
-
+	return 0;
 }
