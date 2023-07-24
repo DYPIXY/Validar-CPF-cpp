@@ -5,3 +5,7 @@
   ``` 667.556.317-36 | 66755631736 | 667,556,317,36 ``` etc...
 
 ###### *obs: 2 horas após o commit eu percebi que não testei em alguns casos o programa, resultou em erro por ter um = no lugar de +=, aproveitei e coloquei um arquivo main de demonstração, aqui está o pequeno fix
+
+
+## linux build no CLI
+> g++ cpf.cpp cpf.h main.cpp -o cpf
