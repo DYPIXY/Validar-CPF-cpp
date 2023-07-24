@@ -17,12 +17,12 @@ bool cpfVerif(std::string cpf)
 	if(cpf.length() != 11)
 	{
 		std::cout << "Tamanho de cpf inválido" << std::endl;
-		std::exit(1);
+		return false;
 	}
 	//inicia array de dígitos
 	unsigned long cpfLong = std::stol(cpf);
 	int digits[11];
-	unsigned long long j = 10;
+	unsigned long j = 10;
 	for (int i = 0; i < 11 ; i++)
 	{
 		digits[i] = cpfLong % j;
@@ -33,36 +33,26 @@ bool cpfVerif(std::string cpf)
 	int sum = 0;
 	for ( int i = 2 ; i <= 10 ; i++ )
 	{
-		sum += (digits[i] * i);
+		sum += digits[i] * i;
 	}
-	int dv1_i = ((11 - (sum % 11)));
+	int dv1_i = (11 - (sum % 11));
 	if(digits[1] != dv1_i)
 	{
 		return false;
 	}
 	//div 2
 	sum = 0;
+	int offset = 0;
 	for ( int i = 1 ; i <= 10 ; i++ )
 	{
-		sum = (digits[i] * (i));
+		offset = i + 1;
+		sum += digits[i] * offset;
 	}
-	int dv2_i = ((11 - (sum % 11)));
+	int dv2_i = (11 - (sum % 11));
 	if(digits[0] != dv2_i)
 	{
 		return false;
 	}
 	return true;
 }
-/* descomente aqui se quiser rodar como um executável ao invés de uma lib, insira o valor que quiser da forma que quiser no cpf, o input é sanitizado
 int main()
-{
-	std::string cpf = "667.556.317-36";
-	if(cpfVerif(cpf))
-	{
-		std::cout << "Inválido";
-		return 1;
-	}
-	std::cout << "Valido";
-	return 0;
-}
-*/
