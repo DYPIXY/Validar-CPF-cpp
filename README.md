@@ -8,4 +8,5 @@
 
 
 ## linux build no CLI
-> ```g++ cpf.cpp cpf.h main.cpp -o cpf```
+```g++ cpf.cpp cpf.h main.cpp -o cpf```
+
