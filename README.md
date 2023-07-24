@@ -4,4 +4,4 @@
   Criado em forma de Lib, mas pode ser executado por si só se a função "main" for descomentada, o input de cpf é sanitizado e remove os seguintes caracteres {,-.}, logo pode receber inputs como:
   ``` 667.556.317-36 | 66755631736 | 667,556,317,36 ``` etc...
 
-###### *obs
+###### *obs: 2 horas após o commit eu percebi que não testei em alguns casos o programa, resultou em erro por ter um = no lugar de +=, aproveitei e coloquei um arquivo main de demonstração, aqui está o pequeno fix
